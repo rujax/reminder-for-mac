@@ -137,7 +137,6 @@ struct ContentView: View {
             }
         }
         .frame(width: 600.0, height: 800.0)
-        .fixedSize()
         .background(Color(hex: 0xcccccc))
         .onAppear() {
             print("ContentView onAppear")

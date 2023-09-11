@@ -18,6 +18,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     private var statusItem: NSStatusItem!
     private var launchMenuItem: NSMenuItem!
 
+//    private var isLaunchedAtLogin: Bool {
+//        guard let event = NSAppleEventManager.shared().currentAppleEvent else { return false }
+//
+//        return
+//            event.eventID == kAEOpenApplication &&
+//            event.paramDescriptor(forKeyword: keyAEPropData)?.enumCodeValue == keyAELaunchedAsLogInItem
+//    }
+
     func applicationDidFinishLaunching(_ notification: Notification) {
         print("applicationDidFinishLaunching")
 
@@ -59,14 +67,31 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         menu.addItem(withTitle: "禁用全部提醒", action: #selector(AppDelegate.disableAllReminders), keyEquivalent: "")
         menu.addItem(.separator())
 
-        //        launchMenuItem = NSMenuItem(title: "开机启动", action: #selector(AppDelegate.setLaunchAtLogin), keyEquivalent: "")
-        //        launchMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
-        //        menu.addItem(launchMenuItem)
-        //        menu.addItem(.separator())
+//        launchMenuItem = NSMenuItem(title: "开机启动", action: #selector(AppDelegate.setLaunchAtLogin), keyEquivalent: "")
+//        launchMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
+//        menu.addItem(launchMenuItem)
+//        menu.addItem(.separator())
 
         menu.addItem(withTitle: "退出", action: #selector(AppDelegate.quit), keyEquivalent: "")
 
         statusItem.menu = menu
+
+//        if isLaunchedAtLogin {
+//            NSApp.hide(self)
+//            NSApp.setActivationPolicy(.accessory)
+//        }
+
+//        var startedAtLogin = false
+//
+//        for app in NSWorkspace.shared.runningApplications {
+//            if app.bundleIdentifier == "org.rujax.Reminder" {
+//                startedAtLogin = true
+//
+//                break
+//            }
+//        }
+//
+//        print("startedAtLogin", startedAtLogin)
     }
 
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
@@ -108,12 +133,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         observableMenu?.isDisableAll = true
     }
 
-    //    @objc func setLaunchAtLogin() {
-    //        print(LaunchAtLogin.isEnabled)
-    //
-    //        LaunchAtLogin.isEnabled.toggle()
-    //        launchMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
-    //    }
+//    @objc func setLaunchAtLogin() {
+//        print(LaunchAtLogin.isEnabled)
+//
+//        LaunchAtLogin.isEnabled.toggle()
+//        launchMenuItem.state = LaunchAtLogin.isEnabled ? .on : .off
+//    }
 
     @objc func quit() {
         NSApp.hide(self)

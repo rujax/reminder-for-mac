@@ -25,6 +25,7 @@ struct ReminderApp: App {
         WindowGroup {
             ContentView().environmentObject(observableMenu)
         }
+        .windowResizabilityContentSize()
         .commands {
             //            RemindCommands()
             //            SettingCommands()

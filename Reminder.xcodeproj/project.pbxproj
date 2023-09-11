@@ -16,6 +16,7 @@
 		C64F9E7A2AA7A2EC005497D5 /* ObservableMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F9E792AA7A2EC005497D5 /* ObservableMenu.swift */; };
 		C696F3E42A9AE98600F2F67D /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F3E32A9AE98600F2F67D /* Reminder.swift */; };
 		C696F3E62A9B02EC00F2F67D /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C696F3E52A9B02EC00F2F67D /* ArrayExtension.swift */; };
+		C6A2F2A22AAF870400C5803B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A2F2A12AAF870400C5803B /* Scene.swift */; };
 		C6BC60FB2A9E397E008EECCA /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC60FA2A9E397E008EECCA /* AppDelegateExtension.swift */; };
 		C6BC60FD2AA10A18008EECCA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC60FC2AA10A18008EECCA /* DateExtension.swift */; };
 		C6F999E12A90B50C005D2F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F999E02A90B50C005D2F45 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 		C64F9E792AA7A2EC005497D5 /* ObservableMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableMenu.swift; sourceTree = "<group>"; };
 		C696F3E32A9AE98600F2F67D /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		C696F3E52A9B02EC00F2F67D /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		C6A2F2A12AAF870400C5803B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		C6BC60FA2A9E397E008EECCA /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		C6BC60FC2AA10A18008EECCA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		C6BC60FE2AA46B90008EECCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				C696F3E52A9B02EC00F2F67D /* ArrayExtension.swift */,
 				C6BC60FA2A9E397E008EECCA /* AppDelegateExtension.swift */,
 				C6BC60FC2AA10A18008EECCA /* DateExtension.swift */,
+				C6A2F2A12AAF870400C5803B /* Scene.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,6 +265,9 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh",
+				"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper.zip",
+				"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper-with-runtime.zip",
 			);
 			name = "Run Script";
 			outputFileListPaths = (
@@ -270,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nxcrun agvtool next-version -all\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nxcrun agvtool next-version -all\n\n\"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -291,6 +297,7 @@
 				C6103C672A90962E00A9CF57 /* ReminderApp.swift in Sources */,
 				C6F999F92A90FFE9005D2F45 /* MonthlyTab.swift in Sources */,
 				C6F99A012A92662A005D2F45 /* ReminderView.swift in Sources */,
+				C6A2F2A22AAF870400C5803B /* Scene.swift in Sources */,
 				C6F999FF2A926399005D2F45 /* Helper.swift in Sources */,
 				C6F999EF2A90FF66005D2F45 /* NoRepeatTab.swift in Sources */,
 				C6BC60FD2AA10A18008EECCA /* DateExtension.swift in Sources */,
@@ -425,7 +432,7 @@
 				CODE_SIGN_ENTITLEMENTS = Reminder/Reminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 412;
+				CURRENT_PROJECT_VERSION = 440;
 				DEVELOPMENT_ASSET_PATHS = "\"Reminder/Preview Content\"";
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -438,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = org.rujax.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -457,7 +464,7 @@
 				CODE_SIGN_ENTITLEMENTS = Reminder/Reminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 412;
+				CURRENT_PROJECT_VERSION = 440;
 				DEVELOPMENT_ASSET_PATHS = "\"Reminder/Preview Content\"";
 				ENABLE_PREVIEWS = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -470,7 +477,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = org.rujax.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
