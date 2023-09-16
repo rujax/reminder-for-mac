@@ -2,15 +2,15 @@
 //  Print.swift
 //  Reminder
 //
-//  Created by Rujax on 2023/9/10.
+//  Created by Rujax on 2023.
 //
 
 import Foundation
 
 public func print(_ objects: Any...) {
     #if DEBUG
-    for object in objects {
-        Swift.print(object)
+    for (index, object) in objects.enumerated() {
+        Swift.print(object, terminator: (index + 1 == objects.count ? "\n" : " "))
     }
     #endif
 }

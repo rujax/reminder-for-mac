@@ -2,7 +2,7 @@
 //  ObservableMenu.swift
 //  Reminder
 //
-//  Created by Rujax on 2023/9/6.
+//  Created by Rujax on 2023.
 //
 
 import Foundation
