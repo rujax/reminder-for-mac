@@ -191,7 +191,7 @@ struct ReminderView: View {
                 )
             }
 
-            HStack(spacing: 0) {}.frame(width: 600, height: 0.5).background(.gray)
+            HStack(spacing: 0) {}.frame(width: 600, height: 1).background(.gray)
         }
         .onAppear() {
             print("ReminderView onAppear")
